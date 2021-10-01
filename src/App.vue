@@ -1,30 +1,26 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
-
+<script>
+let brand  = " | "+ process.env.VUE_APP_TITLE
+export default {
+  name : 'App',
+  watch : {
+    $route(to){
+      document.title = to.meta.title + brand,
+      document.description = to.meta.description
+    }
+  }
+}
+</script>
 <style>
+@font-face {
+    font-family: "Kanit";
+    src: url('./assets/font/Kanit/Kanit-ExtraLight.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  font-family: Kanit;
 }
 </style>
