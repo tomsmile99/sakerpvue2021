@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production' ? '/sakerp21_fontend': '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/sakerp21_buildfontend': '/',
     configureWebpack: {
         devtool: 'source-map'
     }

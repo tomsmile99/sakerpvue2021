@@ -120,6 +120,17 @@ form{
 	transition: .4s;
 }
 
+.input-div.error:before, .input-div.error:after{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: #ff0000;
+	transition: .4s;
+}
+
+
 .input-div:before{
 	right: 50%;
 }
@@ -141,6 +152,22 @@ form{
 .input-div.focus > .i > i{
 	color: #536DFE;
 }
+
+.input-div.error:before, .input-div.error:after{
+	width: 50%;
+}
+
+.input-div.error > div > h5{
+	top: -5px;
+	font-size: 15px;
+	color: #ff0000;
+}
+
+.input-div.error > .i > i{
+	color: #ff0000;
+}
+
+
 
 .input-div > div > input{
 	position: absolute;
@@ -191,6 +218,27 @@ a:hover{
 	transition: .5s;
 }
 .btn_style:hover{
+	background-position: right;
+}
+
+
+.btn_style_with{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #536b97, #718cbe, #9cb4e0);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+.btn_style_with:hover{
 	background-position: right;
 }
 
