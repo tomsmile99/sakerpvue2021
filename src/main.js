@@ -21,7 +21,6 @@ app.use(router)
 app.use(VueSweetalert2)
 app.use(VueCookies);
 
-
 // Or to set default config:
 // app.use(VueCookies, {
 //     expireTimes: "7d",
@@ -30,6 +29,5 @@ app.use(VueCookies);
 //     secure: true,
 //     sameSite: "None"
 // });
-
 
 app.mount('#app')

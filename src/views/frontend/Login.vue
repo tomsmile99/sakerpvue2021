@@ -53,7 +53,7 @@
                         </div>
                         <div class="row">
                             <div class="text-center col-md-12">
-                                <span style="font-size: 16pt;">ระบบบริหารจัดการภายในองค์กร</span> <br/> <span style="font-size: 10pt;">บริษัท ศักดิ์สยามลิสซิ่ง จำกัด (มหาชน)</span><br><span style="font-size: 9pt;">พัฒนาโดย : ฝ่ายการตลาด (เว็บไซต์และบริหารงานลูกค้าออนไลน์)</span><br><span style="font-size: 10pt;">© 2021 Copyright: Saksiam Leasing Public Company Limited. All Rights Reserved. (version )</span>
+                                <span style="font-size: 16pt;">ระบบบริหารจัดการภายในองค์กร</span> <br/> <span style="font-size: 10pt;">บริษัท ศักดิ์สยามลิสซิ่ง จำกัด (มหาชน)</span><br><span style="font-size: 9pt;">พัฒนาโดย : ฝ่ายการตลาด (เว็บไซต์และบริหารงานลูกค้าออนไลน์)</span><br><span style="font-size: 10pt;">© 2021 Copyright: Saksiam Leasing Public Company Limited. All Rights Reserved. (version <span>{{ dataVersion }}</span>)</span>
                             </div>
                         </div>
                     </form>
@@ -96,7 +96,7 @@ export default {
         }
     },
     mounted() {
-        
+        this.dataVersion = "2.0.0"
         this.passDate = btoa(toString(new Date()))
         //console.log(this.passDate);
 
@@ -178,29 +178,48 @@ export default {
                 this.$refs.focusUser.focus()
                 this.isActiveUser = true
                 this.isFocus = TextTrackCueList
+                this.$swal({
+                    icon: 'error',
+                    title: 'กรุณากรอกหมายเลขบัตรประชาชนของท่าน',
+                    confirmButtonText : 'ปิด'
+                })
                 return false
             }else if(this.InputUsername.length != '13'){
                 this.$refs.focusUser.focus()
                 this.isActiveUser = true
                 this.isFocus = TextTrackCueList
+                this.$swal({
+                    icon: 'error',
+                    title: 'กรุณากรอกหมายเลขบัตรประชาชนของท่าน ให้ครบ 13 หลัก',
+                    confirmButtonText : 'ปิด'
+                })
                 return false
             }else if(this.InputPass == ""){
                 this.$refs.focusPass.focus()
                 this.isActivePass = true
                 this.isFocusPass = true
+                this.$swal({
+                    icon: 'error',
+                    title: 'กรุณากรอกรหัสผ่าน',
+                    confirmButtonText : 'ปิด'
+                })
                 return false
             }else if(this.InputUsername == "" && this.InputPass == ""){
                 this.$refs.focusUser.focus()
                 this.$refs.focusPass.focus()
                 this.isActiveUser = true
                 this.isActivePass = true
+                this.$swal({
+                    icon: 'error',
+                    title: 'กรุณากรอกหมายเลขบัตรประชาชน และรหัสผ่าน',
+                    confirmButtonText : 'ปิด'
+                })
                 return false
             }else{
                 //alert('มาละๆ');
                 this.v$.$validate(); // Check all input
                 if(!this.v$.$error){
                   
-
                     // set ตรวจสอบ ui login
                     this.btLogin = false
                     this.btWaitlogin = true
@@ -248,7 +267,7 @@ export default {
                             return false
                         }else{
 
-
+                
                             const userCokie = { username_value : this.InputUsername, remeberCheck: this.remeber,session:'25j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX' }
                             this.$cookies.set('userCokie', userCokie)
                             this.userCokieCheck = this.$cookies.get('userCokie').username_value

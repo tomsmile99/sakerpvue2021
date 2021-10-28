@@ -1,5 +1,6 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production' ? '/sakerp21_buildfontend': '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/sakerp21_buildfontend': '/', // บน localhost
+    //publicPath: process.env.NODE_ENV === 'production' ? '/' : '/', // บน server จริง
     configureWebpack: {
         devtool: 'source-map'
     }
