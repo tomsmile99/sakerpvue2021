@@ -17,7 +17,8 @@ export default createStore({
     }
   },
   actions: {
-    addAction(context){
+    //api get version ระบบ
+    showVersion(context){
         http.get('versions').then(res => {
           context.commit('setVERSION', res.data.appVS_name)
         }).catch(error => {
@@ -28,4 +29,5 @@ export default createStore({
   modules: {
 
   },
+  
 })

@@ -96,7 +96,7 @@ export default {
         }
     },
     created() {
-        this.$store.dispatch("addAction")
+        this.$store.dispatch("showVersion")
     },
     mounted() {
         //this.dataVersion = "2.0.0"
