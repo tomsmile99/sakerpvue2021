@@ -95,10 +95,10 @@ export default {
             userCokieCheck : "",
         }
     },
-    created() {
+    created() { //โหลดครั้งแรก ครั้งเดียว
         this.$store.dispatch("showVersion")
     },
-    mounted() {
+    mounted() { // โหลดเมื่อมีการเปลี่ยนแปลงค่า
         //this.dataVersion = "2.0.0"
         this.passDate = btoa(toString(new Date()))
         //console.log(this.passDate);
@@ -144,7 +144,7 @@ export default {
             }
         }
     },
-    methods: {
+    methods: { //ทำงานเมื่อมีการกระทำ
         // ClickInputUsername(){
         //     this.showFocusUsername = true
         //     if(this.InputPass == ""){

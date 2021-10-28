@@ -107,7 +107,7 @@ const routes = [
     ],
     
     meta: {
-      title: 'Dashboard'
+      title: 'หน้าหลัก'
     }
   },
 ]
