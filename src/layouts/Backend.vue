@@ -1,13 +1,14 @@
 <template>
-    
     <div class="container-fluid">
+        <vue-progress-bar></vue-progress-bar>
         <div class="row">
             <Header />
         </div>
-        <div class="p-4 row">
-            <router-view></router-view>
-            <vue-progress-bar></vue-progress-bar>
-        </div>
+        <transition name="fade">
+            <div class="p-4 row" v-if="showContent">  
+                <router-view></router-view>
+            </div>
+         </transition>
         <div class="row">
             <Footer />
         </div>
@@ -22,15 +23,27 @@ export default {
     components: {
         Header,
         Footer,
-        
+    },
+    data() {
+        return {
+            showContent: false,
+        }
     },
     created() {
-      this.$Progress.start();
+        this.$Progress.start()
     },
     mounted() {
-      setTimeout(function(){
-           this.$Progress.finish();     
-        }, 2 * 1000);
+        this.showContent = true
+        this.$Progress.finish()   
     },
 }
 </script>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+</style>
