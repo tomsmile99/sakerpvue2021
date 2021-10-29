@@ -11,6 +11,8 @@ import Login from '@/views/frontend/Login.vue'
 
 // import Views Backend
 import Dashboard from '@/views/backend/Dashboard.vue'
+import FormTest1 from '@/views/backend/FormTest1.vue'
+import FormTest2 from '@/views/backend/FormTest2.vue'
 
 
 //สร้างเป็น function เพื่อลดความซ้ำซ่อนสำหรับตรวจสอบ route ก่อนเข้าไปใช้งานหลังบ้าน (Route Auth Guard)
@@ -82,15 +84,16 @@ const routes = [
   },
 
   /*  Backend routers */
-  {
+  {//dashboard
     path: '/dashboard',
     component: BackendLayout,
     // name: 'Dashboard',
     children: [
       {
-        path: '',
+        path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard,
+        beforeEnter : authGuard
         // beforeEnter: (to, from, next) => {
         //   // to ส่งไปหน้าใน
         //   // from มาจากหน้าไหน
@@ -102,14 +105,43 @@ const routes = [
         //   }
         // },
 
-        beforeEnter : authGuard
+        
       }
     ],
-    
     meta: {
       title: 'หน้าหลัก'
     }
-  },
+  },// จบ dashboard
+  {//form1
+    path: '/form1',
+    component: BackendLayout,
+    children: [
+      {
+        path: '/form1',
+        name: 'form1',
+        component: FormTest1,
+        beforeEnter : authGuard
+      }
+    ],
+    meta: {
+      title: 'form 1'
+    }
+  },// จบ form1
+  {//form2
+    path: '/form2',
+    component: BackendLayout,
+    children: [
+      {
+        path: '/form2',
+        name: 'form2',
+        component: FormTest2,
+        beforeEnter : authGuard
+      }
+    ],
+    meta: {
+      title: 'form 2'
+    }
+  },// จบ form1
 ]
 
 const router = createRouter({

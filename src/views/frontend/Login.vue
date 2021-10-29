@@ -270,7 +270,6 @@ export default {
                             return false
                         }else{
 
-                
                             const userCokie = { username_value : this.InputUsername, remeberCheck: this.remeber,session:'25j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX' }
                             this.$cookies.set('userCokie', userCokie)
                             this.userCokieCheck = this.$cookies.get('userCokie').username_value
@@ -282,13 +281,11 @@ export default {
                             
                             // cookie เก็บ role ยังไม่ใช้งาน
                             //this.$cookies.set('role', btoa(btoa(btoa(res.data.user.role))),60 * 60 * 1) // 1 hour after, expire
-                            
 
                             // เก็บข้อมูล user ลง localStorage
                             localStorage.setItem('user', JSON.stringify(res.data)) //รูปแบบ localStorage 
                             //sessionStorage.setItem('user', JSON.stringify(response.data)); //รูปแบบ sessionStorage 
                             this.$router.push({ name : 'Dashboard' })
-                            
                         }
                     }).catch(error => {
                         if(error.res){

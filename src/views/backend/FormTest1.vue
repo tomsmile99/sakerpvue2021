@@ -1,9 +1,6 @@
 <template>
     <div class="col-md-12">
-     
-        <div class="row">
-          <h1>Content Dashboard</h1>
-        </div>
+      <h1>Form 1</h1>
     </div>
 </template>
 <script>

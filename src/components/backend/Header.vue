@@ -1,7 +1,16 @@
 <template>
-    <div class="">
-        <h1>Header Backend</h1>
-        <a @click="onClickLogout" class="text-white btn btn-danger">Log out</a>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Header Backend</h1>
+            <div class="row">
+                <router-link to="/dashboard">หน้าหลัก</router-link> |
+                
+                <router-link to="/form1">Form 1</router-link> |
+                
+                <router-link to="/form2">Form 2</router-link> |
+            </div>
+            <a @click="onClickLogout" class="text-white btn btn-danger">Log out</a>
+        </div>
     </div>
 </template>
 
