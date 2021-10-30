@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/styles/login.css'
+import 'mdb-vue-ui-kit/css/mdb.min.css';
 
 
 
@@ -32,6 +33,10 @@ const options = {
 // import fadein fadeout
 import VuePageTransition from 'vue-page-transition'
 
+
+
+
+
 // createApp(App).use(store).use(router).mount('#app') แบบเดิม
 // สร้างตัวแปรมาเก็บ Constant ของ App
 const app = createApp(App)
@@ -42,6 +47,9 @@ app.use(VueSweetalert2)
 app.use(VueCookies);
 app.use(VueProgressBar, options)
 app.use(VuePageTransition)
+
+
+
 // Or to set default config:
 // app.use(VueCookies, {
 //     expireTimes: "7d",

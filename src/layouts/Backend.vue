@@ -1,32 +1,26 @@
-<template>
+<template>  
+    <vue-progress-bar></vue-progress-bar>
+    <Header />
+    <Navbar />
     <div class="container-fluid">
-        <vue-progress-bar></vue-progress-bar>
-            <Header />
-        <!-- <transition name="fade">
-            <div class="p-4 row" v-if="showContent">  
-                <router-view></router-view>
-            </div>
-         </transition> -->
-        <div class="row">
-            <router-view v-slot="{Component}">
-                <transition name="fade" mode="out-in">
-                    <component :is="Component" />
-                </transition>
-            </router-view>
-        </div>
-        <div class="row">
-            <Footer />
-        </div>
+        <router-view v-slot="{Component}">
+            <transition name="fade" mode="out-in">
+                <component :is="Component" />
+            </transition>
+        </router-view>
+    <Footer />
     </div>
 </template>
 
 <script>
 import Header from '@/components/backend/Header.vue'
+import Navbar from '@/components/backend/Navbar.vue'
 import Footer from '@/components/backend/Footer.vue'
 export default {
     name: 'BackendLayout',
     components: {
         Header,
+        Navbar,
         Footer,
     },
     data() {

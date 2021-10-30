@@ -14,12 +14,12 @@ export default {
 }
 </script>
 <style>
-@font-face {
+/* @font-face {
     font-family: "Kanit";
     src: url('./assets/font/Kanit/Kanit-ExtraLight.woff') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+} */
 #app {
   font-family: Kanit;
 }
