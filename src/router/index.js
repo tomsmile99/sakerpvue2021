@@ -85,13 +85,13 @@ const routes = [
 
   /*  Backend routers */
   {//dashboard
-    path: '/dashboard',
+    path: '/home',
     component: BackendLayout,
     // name: 'Dashboard',
     children: [
       {
-        path: '/dashboard',
-        name: 'Dashboard',
+        path: '/home',
+        name: 'Home',
         component: Dashboard,
         beforeEnter : authGuard
         // beforeEnter: (to, from, next) => {
@@ -146,8 +146,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  linkActiveClass: 'active',
 })
 
 export default router
-

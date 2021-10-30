@@ -285,7 +285,7 @@ export default {
                             // เก็บข้อมูล user ลง localStorage
                             localStorage.setItem('user', JSON.stringify(res.data)) //รูปแบบ localStorage 
                             //sessionStorage.setItem('user', JSON.stringify(response.data)); //รูปแบบ sessionStorage 
-                            this.$router.push({ name : 'Dashboard' })
+                            this.$router.push({ name : 'Home' })
                         }
                     }).catch(error => {
                         if(error.res){

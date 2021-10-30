@@ -17,25 +17,30 @@
     <header class="d-none d-md-block">
         <div class="p-2 container-sm">
             <div class="row">
-                <div class="p-1 col-md-8">
+                <div class="p-1 col-md-6 col-lg-6">
                     <img src="@/assets/images/logo_sakerp21(400x88px).png">
                 </div>
-                <div class="text-right col-md-4">
-                    <div class="mb-2 row justify-content-end">
-                        <div class="p-1 text-right col-md-6">
-                            <i class="fas fa-user-circle fa-3x"></i>
-                        </div>
-                        <div class="text-left col-md-6">
-                            <span class="" style="font-size:11pt; font-weight:bold;">นายทดสอบ ทดสอบ<br>
+                <div class="mt-1 text-right col-md-6 col-lg-6">
+                    <div class="mb-1 row justify-content-end d-flex">
+                        <div class="text-right col-md-11">
+                            <span class="" style="font-size:11pt; font-weight:bold;">คุณทดสอบ ทดสอบ (อายุงาน 8 ปี 9 เดือน) <br>ฝ่ายการตลาด
                             ตำแหน่งพนักงานฝ่ายการตลาด</span>
                         </div>
+                        <div class="text-center col-md-1" style="">
+                            <span class="" style="font-size:25pt;"><i class="fas fa-user-circle"></i></span>
+                        </div>
                     </div>
-                    <div class="row justify-content-end">
-                        <div class="text-right col-md-12">
+                    <div class="row">
+                        <div class="justify-content-end d-flex align-items-end" style="height: 30px;">
+                            <div class="mr-2"><a href="#"><span id="menuProfile"><i class="fas fa-id-card-alt"></i> ข้อมูลส่วนตัว</span></a></div> |
+                            <div class="ml-2 mr-2"><a href="#"><span id="menuProfile"><i class="fas fa-lock"></i> เปลี่ยนรหัสผ่าน</span></a></div> |
+                            <div class="ml-2"><a href="#"><span id="menuProfile"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</span></a></div>
+                        </div>
+                        <!-- <div class="text-right col-md-12">
                             <span class="mr-2" style="font-size:11pt;"><i class="fas fa-id-card-alt"></i> ข้อมูลส่วนตัว</span> |
                             <span class="ml-2 mr-2" style="font-size:11pt;"><i class="fas fa-lock"></i> เปลี่ยนรหัสผ่าน</span> |
                             <span class="ml-2" style="font-size:11pt;"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</span>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- <div class="d-flex align-items-end" style="height: 33px;">
                         <span class="mr-2" style="font-size:11pt;"><i class="fas fa-id-card-alt"></i> ข้อมูลส่วนตัว</span> |
@@ -55,9 +60,9 @@
                 <div class="col-md-12">
                     <img src="@/assets/images/logo_sakerp21(300x66px).png">
                 </div>
-                <div class="mt-3 mb-3 text-center col-md-12">
+                <!-- <div class="mt-3 mb-3 text-center col-md-12">
                     4
-                </div>
+                </div> -->
             </div>
         </div>
     </header>
@@ -114,4 +119,9 @@ export default {
     font-size: 14pt;
     font-weight: bold;
 } 
+#menuProfile{
+    font-size: 10pt;
+    font-weight: bold;
+}
+
 </style>
