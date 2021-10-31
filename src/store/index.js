@@ -3,12 +3,16 @@ import http from '../services/AuthService'
 
 export default createStore({
   state: {
-    dataVersions : ""
+    dataVersions : "",
+    showMenu: false
   },
   mutations: {
     setVERSION(state, value) {
       state.dataVersions = value
     },
+    toggleMenu(state){
+      state.showMenu = !state.showMenu
+    }
   },
   //ใช้ getters จะปลอดภัยกว่าการใช้ state แบบโดนตรง 
   getters:{

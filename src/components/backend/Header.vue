@@ -96,7 +96,6 @@ export default {
     methods: { // ต้องมีการกระทำ
       onClickLogout(){
         //alert('มาละๆ');
-
         this.$swal({
             title: 'คุณต้องการออกจากระบบหรือไม่ ?',
             icon: 'warning',

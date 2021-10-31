@@ -35,8 +35,6 @@ import VuePageTransition from 'vue-page-transition'
 
 
 
-
-
 // createApp(App).use(store).use(router).mount('#app') แบบเดิม
 // สร้างตัวแปรมาเก็บ Constant ของ App
 const app = createApp(App)

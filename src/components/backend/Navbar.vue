@@ -3,53 +3,62 @@
         <div class="container-sm">
             <a class="navbar-brand" href="#"></a>
             <button
-                class="navbar-toggler"
+                class="ml-auto navbar-toggler"
+                :class="{ 'collapsed': !this.$store.state.showMenu }"
                 type="button"
                 data-mdb-toggle="collapse"
                 data-mdb-target="#navbarNav"
                 aria-controls="navbarNav"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-label="Toggle navigation"
+                @click="onClickMobileMenu"
             >
-            <i class="fas fa-bars"></i>
+            <span class="" style="font-size:20pt;"><i class="fas fa-bars"></i></span>
             </button>
-            <div class="collapse navbar-collapse navbar-dark" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item nav-custom">
-                        <router-link to="/home" class="nav-link nav-custome" aria-current="page" id="navCustome"><i class="fas fa-home"></i> หน้าหลัก</router-link>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navCustome"
-                            role="button"
-                            data-mdb-toggle="dropdown"
-                            aria-expanded="true"
-                            @click="ClickshowSubMenu"
-                        >
-                        <i class="fas fa-file-alt"></i>
-                        ฟอร์มอิเล็กทรอนิกส์
-                        </a>
-                        <transition name="fade">
-                            <ul class="dropdown-menu" :class="{'show' : showSubMenu}" aria-labelledby="navCustome">
-                                <li>
-                                    <a class="dropdown-item" href="#">ยื่นขออนุมัติรถไม่มีเรทจัด</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
-                        </transition>
-                    </li> -->
-                    <li class="nav-item nav-custom">
-                        <router-link to="/ElectronicsForm" class="nav-link" id="navCustome"> <i class="fas fa-file-alt"></i> ฟอร์มอิเล็กทรอนิกส์</router-link>
-                    </li>
-                </ul>
-            </div>
+          
+                <div class="collapse navbar-collapse navbar-dark" :class="{ 'show': this.$store.state.showMenu }" id="navbarNav">
+                    <ul class="text-left navbar-nav border-danger">
+                        <li class="nav-item">
+                            <router-link to="/home" class="nav-link" id="navCustome" @click="onClickMobileMenu"><i class="fas fa-home"></i> หน้าหลัก</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/ElectronicsForm" class="nav-link" id="navCustome" @click="onClickMobileMenu"> <i class="fas fa-file-alt"></i> ฟอร์มอิเล็กทรอนิกส์</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/form2" class="nav-link" id="navCustome" @click="onClickMobileMenu"> <i class="fas fa-file-alt"></i> menu 2</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/form3" class="nav-link" id="navCustome" @click="onClickMobileMenu"> <i class="fas fa-file-alt"></i> menu 3</router-link>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navCustome"
+                                role="button"
+                                data-mdb-toggle="dropdown"
+                                aria-expanded="true"
+                                @click="ClickshowSubMenu"
+                            >
+                            <i class="fas fa-file-alt"></i>
+                            ฟอร์มอิเล็กทรอนิกส์
+                            </a>
+                            <transition name="fade">
+                                <ul class="dropdown-menu" :class="{'show' : showSubMenu}" aria-labelledby="navCustome">
+                                    <li>
+                                        <a class="dropdown-item" href="#">ยื่นขออนุมัติรถไม่มีเรทจัด</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </li>
+                                </ul>
+                            </transition>
+                        </li> -->
+                    </ul>
+                </div>
         </div>
     </nav>
 </template>
@@ -60,6 +69,7 @@ export default {
     data() {
         return {
             //showSubMenu: false,
+            
         }
     },
     mounted() { 
@@ -69,6 +79,9 @@ export default {
         // ClickshowSubMenu(){
         //     this.showSubMenu = !this.showSubMenu
         // }
+        onClickMobileMenu(){
+            this.$store.commit("toggleMenu")
+        }
     },
 }
 </script>
@@ -86,16 +99,14 @@ a#navCustome:hover{
 a.nav-link {
     font-size: 12pt;
     color:rgb(255, 255, 255);
+    text-align: left;
+    padding: 10px 10px 10px 10px;
 }
 a.active{
     background:rgba(255,255,255,.1);
     color:rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0;
-}
+
 </style>
