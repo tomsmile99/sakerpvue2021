@@ -14,17 +14,41 @@
             <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse navbar-dark" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item nav-custom">
-                    <router-link to="/home" class="nav-link nav-custome" aria-current="page" id="navCustome"><i class="fas fa-home"></i> หน้าหลัก</router-link>
-                </li>
-                <li class="nav-item nav-custom">
-                    <router-link to="/form1" class="nav-link" id="navCustome"> <i class="fas fa-inbox"></i> เงินเดือน และภาษี 50 ทวิ</router-link>
-                </li>
-                <li class="nav-item nav-custom">
-                    <router-link to="/form2" class="nav-link" id="navCustome"> <i class="fas fa-file-alt"></i> ฟอร์มอิเล็กทรอนิกส์</router-link>
-                </li>
-            </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item nav-custom">
+                        <router-link to="/home" class="nav-link nav-custome" aria-current="page" id="navCustome"><i class="fas fa-home"></i> หน้าหลัก</router-link>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="navCustome"
+                            role="button"
+                            data-mdb-toggle="dropdown"
+                            aria-expanded="true"
+                            @click="ClickshowSubMenu"
+                        >
+                        <i class="fas fa-file-alt"></i>
+                        ฟอร์มอิเล็กทรอนิกส์
+                        </a>
+                        <transition name="fade">
+                            <ul class="dropdown-menu" :class="{'show' : showSubMenu}" aria-labelledby="navCustome">
+                                <li>
+                                    <a class="dropdown-item" href="#">ยื่นขออนุมัติรถไม่มีเรทจัด</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
+                            </ul>
+                        </transition>
+                    </li> -->
+                    <li class="nav-item nav-custom">
+                        <router-link to="/ElectronicsForm" class="nav-link" id="navCustome"> <i class="fas fa-file-alt"></i> ฟอร์มอิเล็กทรอนิกส์</router-link>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -33,6 +57,19 @@
 <script>
 export default {
     name: 'Navbar',
+    data() {
+        return {
+            //showSubMenu: false,
+        }
+    },
+    mounted() { 
+       
+    },
+    methods: {
+        // ClickshowSubMenu(){
+        //     this.showSubMenu = !this.showSubMenu
+        // }
+    },
 }
 </script>
 
@@ -53,5 +90,12 @@ a.nav-link {
 a.active{
     background:rgba(255,255,255,.1);
     color:rgb(255, 255, 255);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
 }
 </style>

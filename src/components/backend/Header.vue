@@ -34,7 +34,7 @@
                         <div class="justify-content-end d-flex align-items-end" style="height: 30px;">
                             <div class="mr-2"><a href="#"><span id="menuProfile"><i class="fas fa-id-card-alt"></i> ข้อมูลส่วนตัว</span></a></div> |
                             <div class="ml-2 mr-2"><a href="#"><span id="menuProfile"><i class="fas fa-lock"></i> เปลี่ยนรหัสผ่าน</span></a></div> |
-                            <div class="ml-2"><a href="#"><span id="menuProfile"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</span></a></div>
+                            <div class="ml-2"><a href="javascript:void(0)" @click="onClickLogout"><span id="menuProfile"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</span></a></div>
                         </div>
                         <!-- <div class="text-right col-md-12">
                             <span class="mr-2" style="font-size:11pt;"><i class="fas fa-id-card-alt"></i> ข้อมูลส่วนตัว</span> |
@@ -96,21 +96,34 @@ export default {
     methods: { // ต้องมีการกระทำ
       onClickLogout(){
         //alert('มาละๆ');
-        //เรียก api logout
-        http.post('logout')
-        .then(()=>{
-          this.$cookies.get('userCokie').remeberCheck
-          localStorage.removeItem('user')
-          // กลับไปหน้า login
-          this.$router.push({ name: 'Login'})
-          //window.location.href = '/login'
-        }).catch( error =>{
-          if(error.response){
-            console.log(error.response.data)
-            console.log(error.response.status)
-          }
-        })
-      },
+
+        this.$swal({
+            title: 'คุณต้องการออกจากระบบหรือไม่ ?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ออกจากระบบ',
+            cancelButtonText: 'ไม่ใช่'
+            }).then((result) => {
+                if(result.isConfirmed) {
+                    //เรียก api logout
+                    http.post('logout')
+                    .then(()=>{
+                        this.$cookies.get('userCokie').remeberCheck
+                        localStorage.removeItem('user')
+                        // กลับไปหน้า login
+                        this.$router.push({ name: 'Login'})
+                        //window.location.href = '/login'
+                        }).catch( error =>{
+                        if(error.response){
+                            console.log(error.response.data)
+                            console.log(error.response.status)
+                        }
+                    })
+                }
+            })
+        },
     }
 }
 </script>

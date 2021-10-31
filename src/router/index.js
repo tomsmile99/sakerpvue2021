@@ -11,7 +11,7 @@ import Login from '@/views/frontend/Login.vue'
 
 // import Views Backend
 import Dashboard from '@/views/backend/Dashboard.vue'
-import FormTest1 from '@/views/backend/FormTest1.vue'
+import ElectronicsForm from '@/views/backend/FormTest1.vue'
 import FormTest2 from '@/views/backend/FormTest2.vue'
 
 
@@ -113,18 +113,18 @@ const routes = [
     }
   },// จบ dashboard
   {//form1
-    path: '/form1',
+    path: '/ElectronicsForm',
     component: BackendLayout,
     children: [
       {
-        path: '/form1',
-        name: 'form1',
-        component: FormTest1,
+        path: '/ElectronicsForm',
+        name: 'ElectronicsForm',
+        component: ElectronicsForm,
         beforeEnter : authGuard
       }
     ],
     meta: {
-      title: 'form 1'
+      title: 'ฟอร์มอิเล็กทรอนิกส์'
     }
   },// จบ form1
   {//form2
